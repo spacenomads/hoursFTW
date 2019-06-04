@@ -1,0 +1,25 @@
+/* COMMON */
+body {margin: 0;}
+.page { }
+
+
+
+
+/* APP */
+.app { }
+.app__time-entries {}
+.app__time-entry {
+  display: inline;
+}
+.test {
+  border: 1px solid red;
+  min-width: .5em;
+  display: inline-block;
+}
+.app__results { }
+.app__results-group { }
+.app__results-group--hhmm { }
+.app__results-title { }
+.js__result-hhmm { }
+.app__results-group--decimal { }
+.js__result-decimal { }
