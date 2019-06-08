@@ -8,13 +8,14 @@ const resultDecimal = document.querySelector('.js__result-decimal');
 function getTS(ts) {
   const hours = Math.floor(ts / 60);  
   const minutes = ts % 60;
-  resultHHMM.innerHTML = `${hours}h ${minutes}min`; 
+  return {hours: hours, minutes: minutes};
 }
+
 function getDecimalTS(ts) {
   const hours = Math.floor(ts / 60);  
   const minutes = ts % 60;
   const decimal = hours + minutes/60;
-  resultDecimal.innerHTML = `${decimal.toFixed(2)}h`;
+  return decimal;
 }
 
 userMin.addEventListener('keyup', event => {
@@ -27,6 +28,10 @@ userMin.addEventListener('keyup', event => {
 
 tsMin.addEventListener('change', event => {
   const userMinutes = event.currentTarget.value;
-  getTS(userMinutes);
-  getDecimalTS(userMinutes);
+  const {hours, minutes} = getTS(userMinutes);
+  resultHHMM.innerHTML = `${hours}<span classs="unit">h</span> ${minutes}<span classs="unit">min</span>`; 
+
+  const decimal = getDecimalTS(userMinutes);
+  resultDecimal.innerHTML = `${decimal.toFixed(2)}<span classs="unit">h</span>`;
+  
 });

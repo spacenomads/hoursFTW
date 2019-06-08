@@ -4,15 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hour FTW</title>
+  <title>Hours FTW</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/brands.css" integrity="sha384-vfTtNoEyqnxivzqkzc+mvlVeCWPGwMlIIkeTkt0mcUQNmFLyyXxY5SgZIkKQIXRK" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/fontawesome.css" integrity="sha384-NnhYAEceBbm5rQuNvCv6o4iIoPZlkaWfvuXVh4XkRNvHWKgu/Mk2nEjFZpPQdwiz" crossorigin="anonymous">
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body class="page">
-  
-  <main class="app">
+  <header class="page__header">
+    <h1 class="page__title">Hours</h1>
+    <ul class="page__links">
+      <li class="page__links-item">
+        <a href="https://github.com/spacenomads/hoursFTW" class="page__links-item page__links-item--github">Hours on GitHub</a>
+      </li>
+    </ul>
+  </header>
+
+  <main class="page__main app">
     <section class="app__time-entries">
       <div class="app__time-container">
         <div class="app__time-fake-field js__fake-field" contenteditable="true">0</div>
+        <div class="app__time-units"><abbr class="app__time-unit" title="Minutes">Min</abbr></div>
       </div>
       <div class="app__time-form">
         <label for="timestamp-minutes">Tiempo en minutos</label>
@@ -21,13 +32,21 @@
     </section>
     <section class="app__results">
       <div class="app__results-group app__results-group--hhmm">
-        <h2 class="app__results-title js__result-hhmm"></h2>
+        <h2 class="app__results-title js__result-hhmm">
+          0<span classs="unit">h</span> 00<span classs="unit">min</span>
+        </h2>
       </div>
       <div class="app__results-group app__results-group--decimal">
-        <h2 class="app__results-title js__result-decimal"></h2>
+        <h2 class="app__results-title js__result-decimal">
+          0.00<span classs="unit">h</span>
+        </h2>
       </div>
     </section>
   </main>
+
+  <footer class="page__footer">
+    <p class="page__copyright">© 2019 Spacenomads</p>
+  </footer>
 
   <script src="js/app.js"></script>
 </body>

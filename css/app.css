@@ -1,25 +1,156 @@
-/* COMMON */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+/*
+  COMMON
+
+  ---
+
+  Colors:
+  #0E498C
+  #02588C
+  #02588C
+  #3497BF
+  #F2E8DE
+ */
 body {margin: 0;}
-.page { }
+.page {
+  background-color: #0E498C;
+  background-image: linear-gradient(to bottom, #0E498C,#3497BF);
+  min-height: 250px;
+  height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
+  color: #F2E8DE;
+}
+
+
+
+
+
+/* HEADER */
+.page__header {
+  position: relative;
+}
+.page__title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.page__links {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.page__links-item { }
+.page__links-item--github {
+  height: 1px;
+  padding-top: 15px;
+  width: 16px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  color: inherit;
+}
+.page__links-item--github::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font-family: 'Font Awesome 5 Brands';
+  font-weight: 400;
+  content: '\f09b';
+}
+
 
 
 
 
 /* APP */
-.app { }
-.app__time-entries {}
-.app__time-entry {
-  display: inline;
+.app {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 2fr 1fr;
+  
 }
-.test {
-  border: 1px solid red;
-  min-width: .5em;
+
+
+
+
+
+/* > ENTRIES */
+.app__time-entries { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app__time-container {
+  margin-top: 8.302583026%;
+  position:relative;
   display: inline-block;
 }
-.app__results { }
+.app__time-fake-field {
+  font-weight: bold;
+  font-size: 80px;
+  
+  text-align: center;
+  text-shadow: 0 2px 4px #0E498C;
+}
+.app__time-units {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: -.5em;
+  transform:translate(100%,75%);
+}
+.app__time-unit {
+  text-decoration: none;
+  text-transform: lowercase;
+}
+.app__time-form {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.app__time-entry { }
+
+
+
+
+
+/* > RESULTS */
+.app__results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .app__results-group { }
 .app__results-group--hhmm { }
-.app__results-title { }
-.js__result-hhmm { }
+.app__results-title { 
+  margin: 0;
+}
 .app__results-group--decimal { }
-.js__result-decimal { }
+
+
+
+
+
+/* FOOTER */
+.page__footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.page__copyright {
+  margin: 0;
+  opacity: 0.5;
+  font-size: 14px;
+  color: #F2E8DE;
+  text-align: center;
+  padding-bottom: 20px;
+}
