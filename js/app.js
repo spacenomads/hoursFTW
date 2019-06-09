@@ -6,13 +6,13 @@ const resultHHMM = document.querySelector('.js__result-hhmm');
 const resultDecimal = document.querySelector('.js__result-decimal');
 
 function getTS(ts) {
-  const hours = Math.floor(ts / 60);  
+  const hours = Math.floor(ts / 60);
   const minutes = ts % 60;
   return {hours, minutes};
 }
 
 function getDecimalTS(ts) {
-  const hours = Math.floor(ts / 60);  
+  const hours = Math.floor(ts / 60);
   const minutes = ts % 60;
   return hours + minutes/60;
 }
