@@ -11,14 +11,20 @@
   #3497BF
   #F2E8DE
  */
+html,
+body {
+  height: 100%;
+}
 body {margin: 0;}
 .page {
   background-color: #0E498C;
   background-image: linear-gradient(to bottom, #0E498C,#3497BF);
   min-height: 250px;
-  height: 100vh;
+  height: 100%;
   font-family: 'Ubuntu', sans-serif;
   color: #F2E8DE;
+  display: grid;
+  grid-template-rows: auto 1fr 56px;
 }
 
 
@@ -72,7 +78,6 @@ body {margin: 0;}
 /* APP */
 .app {
   display: grid;
-  height: 100%;
   grid-template-rows: 2fr 1fr;
   
 }
@@ -95,7 +100,7 @@ body {margin: 0;}
 .app__time-fake-field {
   font-weight: bold;
   font-size: 80px;
-  
+  caret-color: white;
   text-align: center;
   text-shadow: 0 2px 4px #0E498C;
 }
@@ -140,12 +145,7 @@ body {margin: 0;}
 
 
 /* FOOTER */
-.page__footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
+.page__footer {}
 .page__copyright {
   margin: 0;
   opacity: 0.5;

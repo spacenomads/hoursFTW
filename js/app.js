@@ -8,7 +8,7 @@ const resultDecimal = document.querySelector('.js__result-decimal');
 function getTS(ts) {
   const hours = Math.floor(ts / 60);  
   const minutes = ts % 60;
-  return {hours: hours, minutes: minutes};
+  return {hours, minutes};
 }
 
 function getDecimalTS(ts) {
@@ -20,7 +20,7 @@ function getDecimalTS(ts) {
 
 userMin.addEventListener('keyup', event => {
   const userMinutes = event.currentTarget.innerHTML;
-  tsMin.value = userMinutes.replace(/\D/g,'');;
+  tsMin.value = userMinutes.replace(/\D/g,'');
 
   const fakeEvent = new CustomEvent('change');
   tsMin.dispatchEvent(fakeEvent);
