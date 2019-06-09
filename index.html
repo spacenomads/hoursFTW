@@ -21,9 +21,16 @@
 
   <main class="page__main app">
     <section class="app__time-entries">
+      <div class="app__field-sizer-container">
+        <span class="app__field-sizer js__field-sizer"></span>
+      </div>
       <div class="app__time-form">
-        <label for="timestamp-minutes">Enter tickets duration</label>
-        <input id="timestamp-minutes" class="app__time-entry js__user-ts" type="number">
+        <label class="app__time-label" for="timestamp-minutes">Enter tickets duration</label>
+        <div class="app__time-field-container">
+          <input id="timestamp-minutes" class="app__time-field js__user-ts" type="number" placeholder="0">
+          <abbr class="app__time-field-units" title="Minutes">Min</abbr>
+        </div>
+
       </div>
     </section>
     <section class="app__results">
