@@ -12,9 +12,10 @@ function setFieldWidth(content) {
 }
 
 function getTS(ts) {
-  const hours = Math.floor(ts / 60);
-  const minutes = ts % 60;
-  return {hours, minutes};
+  const days = Math.floor(ts/1440);
+  const hours = Math.floor((ts-(days*1440))/60);
+  const minutes = Math.round(ts%60);
+  return {days, hours, minutes};
 }
 
 function getDecimalTS(ts) {
@@ -29,11 +30,12 @@ function writeTime(el,content) {
 
 function getTime(event) {
   const userMinutes = parseInt(event.currentTarget.value) || 0;
-  const {hours, minutes} = getTS(userMinutes);
+  const {days, hours, minutes} = getTS(userMinutes);
   const decimal = getDecimalTS(userMinutes);
   setFieldWidth(userMinutes);
-  writeTime(resultHHMM, `${hours}<span classs="unit">h</span> ${minutes}<span classs="unit">min</span>`);
+  writeTime(resultHHMM, `${days}<span class="unit">d</span> ${hours}<span classs="unit">h</span> ${minutes}<span classs="unit">min</span>`);
   writeTime(resultDecimal, `${decimal.toFixed(2)}<span classs="unit">h</span>`);
 }
 
+tsMin.value ='';
 tsMin.addEventListener('keyup', getTime);
